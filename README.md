@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cargo
 This project was generated with Generator-M-Ionic v1.7.0. For more info visit the [repository](https://github.com/mwaylabs/generator-m-ionic) or check out the README below.
 
@@ -128,3 +129,6 @@ Start by reading our:
 
 ## License
 Code licensed under MIT. Docs under Apache 2. PhoneGap is a trademark of Adobe.
+=======
+# ioniccargo
+>>>>>>> 0e543ea10e6b4b40169baf4e6cf1ea9ddff4f413
