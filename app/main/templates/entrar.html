@@ -1,0 +1,24 @@
+<ion-view view-title="Entrar">
+  <ion-content>
+	<br/>
+	<br/>
+	<br/>
+
+
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+			<span class="input-label" ng-bind="entrar.email.title"></span>
+			<input type="text" ng-model="entrar.email.val" placeholder="{{entrar.email.placeholder}}">
+		  </label>
+		  <label class="item item-input item-floating-label">
+			<span class="input-label" ng-bind="entrar.senha.title"></span>
+			<input type="password" ng-model="entrar.senha.val" placeholder="{{entrar.senha.placeholder}}">
+		  </label>
+		</div>
+
+		<button class="button button-full button-positive">
+		  Entrar Agora
+		</button>
+
+  </ion-content>
+</ion-view>

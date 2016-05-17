@@ -1,0 +1,31 @@
+<ion-view view-title="Registar">
+  <ion-content>
+	<br/>
+	<br/>
+	<br/>
+
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+			<span class="input-label" ng-bind="registar.primeiroNome.title"></span>
+			<input type="text" ng-model="registar.primeiroNome.val" placeholder="{{registar.primeiroNome.placeholder}}">
+		  </label>
+		  <label class="item item-input item-floating-label">
+			<span class="input-label" ng-bind="registar.ultimoNome.title"></span>
+			<input type="text" ng-model="registar.ultimoNome.val" placeholder="{{registar.ultimoNome.placeholder}}">
+		  </label>
+		  <label class="item item-input item-floating-label">
+			<span class="input-label" ng-bind="registar.email.title"></span>
+			<input type="text" ng-model="registar.email.val" placeholder="{{registar.email.placeholder}}">
+		  </label>
+		  <label class="item item-input item-floating-label">
+			<span class="input-label" ng-bind="registar.senha.title"></span>
+			<input type="password" ng-model="registar.senha.val" placeholder="{{registar.senha.placeholder}}">
+		  </label>
+		</div>
+
+		<button class="button button-full button-positive" ng-click="registar.enviar()">
+		  Registar Agora
+		</button>
+
+  </ion-content>
+</ion-view>
