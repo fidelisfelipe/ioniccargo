@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="cargo" ng-controller="MainCtrl as main" ng-init="main.getDatas()">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no"> <!-- no auto telephone linking -->
 
     <meta name="apple-mobile-web-app-capable" content="yes"> <!-- can be saved to home screen on ios -->
-    <title>cargo</title>
+    <title ng-bind="header.title"></title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -24,7 +24,7 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body ng-app="cargo">
+  <body>
 
     <!-- the nav bar will be updated as we navigate between views -->
     <!-- <ion-nav-bar> can be removed when using sidemenu (contained in menu.html) -->
@@ -49,22 +49,55 @@
     <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->
     <script src="main/main.js"></script>
+    <script src="main/services/menu-serv.js"></script>
     <script src="main/services/main-serv.js"></script>
-    <script src="main/controllers/registar-ctrl.js"></script>
     <script src="main/controllers/menu-ctrl.js"></script>
+    <script src="main/controllers/main-ctrl.js"></script>
     <script src="main/controllers/init-ctrl.js"></script>
-    <script src="main/controllers/inicio-ctrl.js"></script>
-    <script src="main/controllers/entrar-ctrl.js"></script>
-    <script src="main/controllers/debug-ctrl.js"></script>
     <script src="main/constants/config-const.js"></script>
     <script src="app.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
+	<script id="new-data-modal.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-dark">
+                <h1 class="title">Create a new Data</h1>
+                <button class="button button-icon" ng-click="main.getModalData().hide()">
+                    <i class="icon ion-android-close"></i>
+                </button>
+            </ion-header-bar>
+            <ion-content>
+                <form ng-submit="main.createData()">
+                    <div class="list list-inset">
+                        <label class="item item-input">
+                            <input ng-model="main.data.title" type="text" placeholder="Data title">
+                        </label>
+                        <label class="item item-input">
+                            <textarea ng-model="main.data.content" rows="5" placeholder="Data content"></textarea>
+                        </label>
+                        <ul class="list">
+                            <li class="item item-toggle">
+                                Completed?
+                                <label class="toggle toggle-balanced">
+                                    <input type="checkbox" ng-model="data.completed">
+                                   <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <button type="submit" class="button button-block button-positive">Create Data</button>
+                    </div>
+                </form>
+            </ion-content>
+        </ion-modal-view>
+    </script>
   </body>
 </html>

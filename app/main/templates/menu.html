@@ -5,7 +5,7 @@
 
     <!-- header bar -->
     <!-- the nav bar will be updated as we navigate between views -->
-    <ion-nav-bar class="bar-royal">
+    <ion-nav-bar class="bar-stable">
       <!-- back button, shown if applicable -->
       <ion-nav-back-button>
       </ion-nav-back-button>
@@ -25,27 +25,22 @@
   <ion-side-menu side="left">
 
     <!-- menu header -->
-    <ion-header-bar class="bar-royal">
+    <ion-header-bar class="bar-stable">
       <h1 class="title" ng-bind="menu.title"></h1>
     </ion-header-bar>
 
     <!-- menu content -->
     <ion-content>
       <ion-list>
-		 <ion-item menu-close ui-sref="main.init" >
+		<ion-item menu-close ui-sref="main.init" >
 			<label ng-bind="menu.opcoes.init"></label>
         </ion-item>
-		 <ion-item menu-close ui-sref="main.inicio" >
-			<label ng-bind="menu.opcoes.home"></label>
-        </ion-item>
-<!--
-        <ion-item menu-close ui-sref="main.list">
-          List
-        </ion-item>
-        <ion-item menu-close ui-sref="main.debug">
-          Debug
-        </ion-item>
--->
+		<ion-item menu-close>
+			<!-- New Task button-->
+			<button class="button button-icon" ng-click="main.dataModal()">
+				<i class="icon ion-compose"></i>
+			</button>
+		</ion-item>
       </ion-list>
     </ion-content>
 

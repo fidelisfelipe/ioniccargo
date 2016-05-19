@@ -1,9 +1,9 @@
 'use strict';
 angular.module('main')
-.controller('MenuCtrl', function ($log) {
+.controller('MenuCtrl', function ($log, MainService) {
 //labels custom
-  this.title = 'Menu';
-  this.opcoes = {init: 'Welcome', home: 'Home'},
+  this.data = {};
+  this.dataModal = MainService.getDataModal();
   $log.log('Hello from your Controller: MenuCtrl in module main:. This is your controller:', this);
 
 });
