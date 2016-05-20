@@ -20,6 +20,7 @@
 
     <!-- build:css main/styles/app.css -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="main/styles/formUsuario.css">
     <link rel="stylesheet" href="main/styles/main.css">
     <!-- endinject -->
     <!-- endbuild -->
@@ -36,7 +37,6 @@
 
     <!-- will be a 404 during development -->
     <script src="cordova.js"></script>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -50,14 +50,23 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-input-masks/angular-input-masks-standalone.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+	<script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->
     <script src="main/main.js"></script>
+    <script src="main/services/usuario-serv.js"></script>
     <script src="main/services/menu-serv.js"></script>
     <script src="main/services/main-serv.js"></script>
+    <script src="main/directives/custom-telefone-validator-dir.js"></script>
+    <script src="main/directives/custom-senha-validator-dir.js"></script>
+    <script src="main/directives/custom-email-validator-dir.js"></script>
+    <script src="main/directives/custom-date-validator-dir.js"></script>
+    <script src="main/directives/custom-cpf-validator-dir.js"></script>
+    <script src="main/controllers/usuario-ctrl.js"></script>
     <script src="main/controllers/menu-ctrl.js"></script>
     <script src="main/controllers/main-ctrl.js"></script>
     <script src="main/controllers/init-ctrl.js"></script>
@@ -65,39 +74,6 @@
     <script src="app.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
-	<script id="new-data-modal.html" type="text/ng-template">
-        <ion-modal-view>
-            <ion-header-bar class="bar-dark">
-                <h1 class="title">Create a new Data</h1>
-                <button class="button button-icon" ng-click="main.getModalData().hide()">
-                    <i class="icon ion-android-close"></i>
-                </button>
-            </ion-header-bar>
-            <ion-content>
-                <form ng-submit="main.createData()">
-                    <div class="list list-inset">
-                        <label class="item item-input">
-                            <input ng-model="main.data.title" type="text" placeholder="Data title">
-                        </label>
-                        <label class="item item-input">
-                            <textarea ng-model="main.data.content" rows="5" placeholder="Data content"></textarea>
-                        </label>
-                        <ul class="list">
-                            <li class="item item-toggle">
-                                Completed?
-                                <label class="toggle toggle-balanced">
-                                    <input type="checkbox" ng-model="data.completed">
-                                   <div class="track">
-                                        <div class="handle"></div>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                        <button type="submit" class="button button-block button-positive">Create Data</button>
-                    </div>
-                </form>
-            </ion-content>
-        </ion-modal-view>
-    </script>
+	
   </body>
 </html>

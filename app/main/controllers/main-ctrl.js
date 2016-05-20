@@ -7,9 +7,6 @@ angular.module('main')
   this.datas = [];
   //initialize the data scope with empty object
   this.data = {};
-  /**control modal of service **/
-  //close modal of service
-  this.dataModal = function () {return MainService.getDataModal();};
   //fetches task from local storage
   this.getDatas = function () {
     $log.log('main.getDatas invoked...');
@@ -29,7 +26,6 @@ angular.module('main')
   };
   //removes a data
   this.removeData = function (index) {
-
     this.datas.splice(index, 1);
     localStorageService.set(data, datas);
   };
@@ -40,4 +36,5 @@ angular.module('main')
     }
     localStorageService.set(data, this.datas);
   };
+  this.test = function () {$log.log('press test');};
 });

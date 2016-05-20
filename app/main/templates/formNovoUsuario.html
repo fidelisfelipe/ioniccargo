@@ -1,0 +1,67 @@
+<ion-view view-title="{{menu.data.dataModal.title}}"> 
+				<ion-content class="padding">
+					<form name="criarUsuarioForm" ng-submit="main.criarUsuario(criarUsuarioForm)" novalidate>
+						<div class="list">
+
+	
+							<label class="item item-input item-floating-label" 
+								ng-class="{ 'has-errors' : criarUsuarioForm.nome.$invalid, 'no-errors' : criarUsuarioForm.nome.$valid}">
+							  <span class="input-label">{{menu.data.form.criarUsuario.nome.title}}</span>
+							  <input type="text" placeholder="{{menu.data.form.criarUsuario.nome.placeholder}}" name="nome" ng-model="menu.data.form.criarUsuario.nome.value" ng-minlength="2" ng-maxlength="50" required>
+							</label>
+							<div class="error-container" ng-show="criarUsuarioForm.nome.$error" ng-messages="criarUsuarioForm.nome.$error">
+							  <div ng-messages-include="error-list.html"></div>
+							</div>
+
+							<label class="item item-input item-floating-label" 
+								ng-class="{ 'has-errors' : criarUsuarioForm.email.$invalid, 'no-errors' : criarUsuarioForm.email.$valid}">
+							  <span class="input-label">{{menu.data.form.criarUsuario.email.title}}</span>
+							  <input type="text" placeholder="{{menu.data.form.criarUsuario.email.placeholder}}" name="email" ng-model="menu.data.form.criarUsuario.email.value" ng-minlength="10" ng-maxlength="30" required>
+							</label>
+							<div class="error-container" ng-show="criarUsuarioForm.email.$error" ng-messages="criarUsuarioForm.email.$error">
+							  <div ng-messages-include="error-list.html"></div>
+							</div>
+
+							<label class="item item-input item-floating-label" 
+								ng-class="{ 'has-errors' : criarUsuarioForm.cpf.$invalid, 'no-errors' : criarUsuarioForm.cpf.$valid}">
+							  <span class="input-label">{{menu.data.form.criarUsuario.cpf.title}}</span>
+							  <input type="text" placeholder="{{menu.data.form.criarUsuario.cpf.placeholder}}" name="cpf" ng-model="menu.data.form.criarUsuario.cpf.value" ng-minlength="14" ng-maxlength="14" ui-br-cpf-mask required>
+							</label>
+							<div class="error-container" ng-show="criarUsuarioForm.cpf.$error" ng-messages="criarUsuarioForm.cpf.$error">
+							  <div ng-messages-include="error-list.html"></div>
+							</div>
+
+							<label class="item item-input item-floating-label"
+								ng-class="{ 'has-errors' : criarUsuarioForm.telefone.$invalid, 'no-errors' : criarUsuarioForm.telefone.$valid}">
+							  <span class="input-label">{{menu.data.form.criarUsuario.telefone.title}}</span>
+							  <input type="tel" placeholder="{{menu.data.form.criarUsuario.telefone.placeholder}}" name="telefone" ng-model="menu.data.form.criarUsuario.telefone.value" ng-minlength="14" ng-maxlength="15" ui-br-phone-number required>
+							</label>
+							<div class="error-container" ng-show="criarUsuarioForm.telefone.$error" ng-messages="criarUsuarioForm.telefone.$error">
+							  <div ng-messages-include="error-list.html"></div>
+							</div>
+							
+							<label class="item item-input item-floating-label"
+								ng-class="{ 'has-errors' : criarUsuarioForm.dataNascimento.$invalid, 'no-errors' : criarUsuarioForm.dataNascimento.$valid}">
+							  <span class="input-label">{{menu.data.form.criarUsuario.dataNascimento.title}}</span>
+							  <input type="text" placeholder="{{menu.data.form.criarUsuario.dataNascimento.placeholder}}" name="dataNascimento" ng-model="menu.data.form.criarUsuario.dataNascimento.value" ui-date-mask required>
+							</label>
+							<div class="error-container" ng-show="criarUsuarioForm.dataNascimento.$error" ng-messages="criarUsuarioForm.dataNascimento.$error">
+							  <div ng-messages-include="error-list.html"></div>
+							</div>
+
+							<label class="item item-input item-floating-label"
+								ng-class="{ 'has-errors' : criarUsuarioForm.senha.$invalid, 'no-errors' : criarUsuarioForm.senha.$valid}">
+							  <span class="input-label">{{menu.data.form.criarUsuario.senha.title}}</span>
+							  <input type="password" placeholder="{{menu.data.form.criarUsuario.senha.placeholder}}" name="senha" ng-model="menu.data.form.criarUsuario.senha.value" ng-minlength="6" ng-maxlength="6" required>
+							</label>
+							<div class="error-container last-error-container" ng-show="criarUsuarioForm.senha.$error" ng-messages="criarUsuarioForm.senha.$error">
+							  <div ng-messages-include="error-list.html"></div>
+							</div>
+			
+							<button type="submit" class="button button-full button-stabled" ng-disabled="criarUsuarioForm.$invalid" >{{menu.data.form.criarUsuario.btnCriar.title}}</button>
+							<button type="button" class="button button-full button-stabled" ng-click="menu.mock()" >mock</button>
+							<button type="button" class="button button-full button-stabled" ng-click="menu.clear()" >clear</button>
+						</div>
+					</form>
+				</ion-content>
+			</ion-view>

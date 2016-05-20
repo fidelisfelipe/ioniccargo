@@ -78,6 +78,11 @@ Yeoman, Gulp, Bower, AngularJS, Ionic & of course Cordova. All in one sexy gener
 
 ## Guides
 
+**Plugins Add
+-- Mask [https://github.com/assisrafael/angular-input-masks/README.md]
+-- Angular-Messages [https://github.com/angular/bower-angular-messages] and [https://docs.angularjs.org/api/ngMessages]
+-- I18n [https://github.com/angular/bower-angular-i18n] see [https://scotch.io/tutorials/internationalization-of-angularjs-applications] and see [https://github.com/nolazybits/angular-i18n/blob/master/sample_app/app/js/app.js]
+
 **Generation**
 - Using Ionic's [CSS or SASS](https://github.com/mwaylabs/generator-m-ionic/tree/master/docs/guides/ionic_css_or_sass.md)?
 - [Sub-generators](https://github.com/mwaylabs/generator-m-ionic/tree/master/docs/guides/sub_generators.md) for adding new components.

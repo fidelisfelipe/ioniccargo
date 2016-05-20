@@ -26,7 +26,7 @@
 
     <!-- menu header -->
     <ion-header-bar class="bar-stable">
-      <h1 class="title" ng-bind="menu.title"></h1>
+      <h1 class="title" ng-bind="menu.data.title"></h1>
     </ion-header-bar>
 
     <!-- menu content -->
@@ -37,7 +37,7 @@
         </ion-item>
 		<ion-item menu-close>
 			<!-- New Task button-->
-			<button class="button button-icon" ng-click="main.dataModal()">
+			<button class="button button-icon" ng-click="menu.openDataModal()">
 				<i class="icon ion-compose"></i>
 			</button>
 		</ion-item>
@@ -47,3 +47,21 @@
   </ion-side-menu>
 
 </ion-side-menus>
+	<script id="error-list.html" type="text/ng-template">  
+		<div class="error" ng-message="required">
+			<i class="ion-information-circled"></i> 
+			Campo Obrigatório!
+		</div>
+		<div class="error" ng-message="minlength">
+			<i class="ion-information-circled"></i> 
+			Muito curto
+		</div>
+		<div class="error" ng-message="maxlength">
+			<i class="ion-information-circled"></i> 
+			Muito longo
+		</div>
+		<div class="error" ng-message="invalid">
+			<i class="ion-information-circled"></i> 
+			Informe CPF válido
+		</div>
+	</script>   
