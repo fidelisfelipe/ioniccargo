@@ -50,7 +50,7 @@
 	<script id="error-list.html" type="text/ng-template">  
 		<div class="error" ng-message="required">
 			<i class="ion-information-circled"></i> 
-			Campo Obrigatório!
+			Obrigatório
 		</div>
 		<div class="error" ng-message="minlength">
 			<i class="ion-information-circled"></i> 
@@ -60,8 +60,12 @@
 			<i class="ion-information-circled"></i> 
 			Muito longo
 		</div>
-		<div class="error" ng-message="invalid">
+		<div class="error" ng-message="cpf">
 			<i class="ion-information-circled"></i> 
-			Informe CPF válido
+			CPF inválido
+		</div>
+		<div class="error" ng-message="email">
+			<i class="ion-information-circled"></i> 
+			Email inválido
 		</div>
 	</script>   

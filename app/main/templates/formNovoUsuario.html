@@ -1,6 +1,6 @@
 <ion-view view-title="{{menu.data.dataModal.title}}"> 
 				<ion-content class="padding">
-					<form name="criarUsuarioForm" ng-submit="main.criarUsuario(criarUsuarioForm)" novalidate>
+					<form name="criarUsuarioForm" ng-submit="menu.criarUsuario(criarUsuarioForm)" novalidate>
 						<div class="list">
 
 	
@@ -16,7 +16,7 @@
 							<label class="item item-input item-floating-label" 
 								ng-class="{ 'has-errors' : criarUsuarioForm.email.$invalid, 'no-errors' : criarUsuarioForm.email.$valid}">
 							  <span class="input-label">{{menu.data.form.criarUsuario.email.title}}</span>
-							  <input type="text" placeholder="{{menu.data.form.criarUsuario.email.placeholder}}" name="email" ng-model="menu.data.form.criarUsuario.email.value" ng-minlength="10" ng-maxlength="30" required>
+							  <input type="email" placeholder="{{menu.data.form.criarUsuario.email.placeholder}}" name="email" ng-model="menu.data.form.criarUsuario.email.value" ng-minlength="10" ng-maxlength="30" required>
 							</label>
 							<div class="error-container" ng-show="criarUsuarioForm.email.$error" ng-messages="criarUsuarioForm.email.$error">
 							  <div ng-messages-include="error-list.html"></div>
