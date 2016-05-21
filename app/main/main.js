@@ -12,11 +12,9 @@ angular.module('main', [
   template: 'Default Loading Template...'
 })
 .config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
-  localStorageServiceProvider.setPrefix('mainStorage');
   // ROUTING with ui.router
-  $urlRouterProvider.otherwise('/main/init');
   $stateProvider
-    // this state is placed in the <ion-nav-view> in the index.html
+  // this state is placed in the <ion-nav-view> in the index.html
 .state('main', {
   url: '/main',
   abstract: true,
@@ -38,6 +36,14 @@ angular.module('main', [
     'pageContent': {
       templateUrl: 'main/templates/init.html',
       controller: 'InitCtrl as init'
+    }
+  }
+})
+.state('main.ok', {
+  url: '/ok',
+  views: {
+    'pageContent': {
+      templateUrl: 'main/templates/ok.html'
     }
   }
 });

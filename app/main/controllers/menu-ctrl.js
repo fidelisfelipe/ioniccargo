@@ -38,6 +38,7 @@ angular.module('main')
 	  $log.log('form valid:',usuarioForm.$valid);
 	  $log.log('init save user of form name:', usuarioForm.$name);
 	  $log.log('nome:',this.data.form.criarUsuario.nome.value);
+	  $state.go('main.ok');
   }
 
   $log.log('Hello from your Controller: MenuCtrl in module main:. This is your controller:', this);

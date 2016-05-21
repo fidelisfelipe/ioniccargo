@@ -1,7 +1,8 @@
 'use strict';
 angular.module('cargo', [
   // load your modules here
-  'main', // starting with the main module
+  'main',
+  'auth',  // starting with the main module
 ]).run(function ($ionicPlatform, $log) {
   $log.log('run app cargo');
   $ionicPlatform.ready(function () {
@@ -14,4 +15,8 @@ angular.module('cargo', [
       StatusBar.styleDefault();
     }
   });
+}).config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
+  localStorageServiceProvider.setPrefix('globalStorage');
+  // ROUTING with ui.router
+  $urlRouterProvider.otherwise('/auth');
 });
